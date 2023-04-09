@@ -3,32 +3,45 @@ nav>div {
     display: flex;
     gap: 1rem;
     margin: 0.5rem;
+    justify-content: center;
 }
 
 #wrapper {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 0.2rem;
 }
 
 .grid {
-    height: 100px;
-    width: 100px;
+    height: 2em;
+    width: 2rem;
+    border-radius: 0.35rem;
     background-color: black;
     border: 10px, solid, #ffffff;
 }
 
-
-
-::-webkit-scrollbar{
-    width: 2em;
+button {
+    border-radius: 0.35rem;
+    background-color: black;
+    color: white;
+    padding: 0.5rem;
 }
 
-::-webkit-scrollbar-track{
-    background: hsl(120, 15% 50% / 1);
+input {
+    border-radius: 0.35rem;
+    background: linear-gradient(to right, rgb(245, 245, 250), rgb(244, 193, 202));
+    color: black;
+    padding: 0.5rem;
 }
 
-::-webkit-scrollbar-thumb{
-    color: red;
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
