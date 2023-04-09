@@ -17,10 +17,17 @@
             <button id="resetBtn" onclick="resetBoard()">Reset</button>
         </div>
     </nav>
+    <div class="backToTop">
+        <a href="#" class="home">
+            <span class="textBackTop">¡Volver!</span>
+        </a>
+    </div>
 
     <div id="wrapper">
 
     </div>
+
+    
 
 </body>
 
@@ -65,6 +72,15 @@
         const alpha = Math.random();
         return `rgba(${red}, ${green}, ${blue}, ${alpha})`;
     }
+
+    const divToRotate = document.querySelector(".backToTop");
+    let rotation = 0;
+
+    window.addEventListener("wheel", (event) => {
+      rotation += event.deltaY;
+      divToRotate.style.transform = `rotate(${rotation}deg)`;
+      console.log(rotation);
+    });
 </script>
 
 </html>

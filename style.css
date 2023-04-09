@@ -1,5 +1,7 @@
 :root {
     --box-shadow: 9px 9px 12px -4px rgba(71, 45, 45, 0.72);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --degrees: 0deg;
 }
 
 
@@ -8,6 +10,12 @@ nav>div {
     gap: 1rem;
     margin: 0.5rem;
     justify-content: center;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 0.5rem;
 }
 
 #wrapper {
@@ -50,6 +58,22 @@ input {
     box-shadow: var(--box-shadow);
     color: black;
     padding: 0.5rem;
+}
+
+.backToTop {
+    background-color: rgb(31, 31, 31);
+    margin: 0px;
+    border-radius: 9999px;
+    height: 3rem;
+    width: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    transform: rotate var(--degrees);
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    border: 2px solid #f1a000;
 }
 
 /* Chrome, Safari, Edge, Opera */
