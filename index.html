@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch-A-Sketch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="navOptions">
+            <input id="blockQuantity" type="number">
+            <button id="setTiles" onclick="createBackground()">Crear Bloques</button>
+            <button id="resetBtn" onclick="resetBoard()">Reset</button>
+        </div>
+    </nav>
+
+    <div id="wrapper">
+
+    </div>
+    
+</body>
+
+<script>
+    const wrapper = document.getElementById("wrapper"); //Selecciono el wrapper 
+    
+    function createBackground() {
+        const amountBlocks = document.getElementById("blockQuantity").value;//El valor del input para hacer dinamico el tablero
+        for(i = 0; i < amountBlocks; i++) {
+        const bloques = document.createElement("div"); //creo un div
+        bloques.className = "grid";
+        document.getElementById("wrapper").append(bloques);
+    }
+    }
+
+    function resetBoard(){
+        const blockDivs = document.querySelectorAll(".grid").forEach(e => e.remove());
+        //Busca todo lo que tenga la clase grid y lo elimina.
+    }
+
+    function mouseMovement(){
+        document.getElementsByClassName
+
+    }
+
+    bloques.onmouseover = mouseMovement();
+
+</script>
+
+</html>
