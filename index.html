@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch-A-Sketch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="navOptions">
+            <input id="blockQuantity" type="number">
+            <button id="setTiles" onclick="createBackground()">Crear Bloques</button>
+            <button id="resetBtn" onclick="resetBoard()">Reset</button>
+        </div>
+    </nav>
+    <div class="backToTop">
+        <a href="#" class="home">
+            <span class="textBackTop">¡Volver!</span>
+        </a>
+    </div>
+
+    <div id="wrapper">
+
+    </div>
+
+    
+
+</body>
+
+<script>
+    const wrapper = document.getElementById("wrapper"); //Selecciono el wrapper 
+
+    function createBackground() {
+        const amountBlocks = document.getElementById("blockQuantity").value;//El valor del input para hacer dinamico el tablero
+        for (i = 0; i < amountBlocks; i++) {
+            const bloques = document.createElement("div"); //creo un div
+            bloques.className = "grid";
+            document.getElementById("wrapper").append(bloques);
+        }
+        //Esto genera un array de todos los "divs" con la clase grid y luego cambia el estado de cada div cuando el
+        //mouse pasa por arriba. "rgb(155, 102, 102)"
+        const squares = Array.from(document.querySelectorAll(".grid"));
+        console.log(squares)
+        squares.forEach(square => square.addEventListener("mouseenter", function (event) {
+            event.target.style.backgroundColor = randomColor();
+        }))
+
+    }
+
+    function resetBoard() {
+        const blockDivs = document.querySelectorAll(".grid").forEach(e => e.remove());
+        //Busca todo lo que tenga la clase grid y lo elimina.
+    }
+
+    /* Mi version de la funcion random, original
+    function randomColor(){
+        let red = Math.random() * (255 - 0) + 0;
+        let green = Math.random() * (255 - 0) + 0;
+        let blue = Math.random() * (255 - 0) + 0;
+        let alpha = Math.random() * (1 - 0) + 0;
+        let color = "rgba(" + red + "," + green + "," + blue + "," + alpha + ")";
+        return color;
+    }
+    la version luego de refactorizarla y más simple:
+    */
+    function randomColor() {
+        const [red, green, blue] = Array.from({ length: 3 }, () => Math.floor(Math.random() * 256));
+        const alpha = Math.random();
+        return `rgba(${red}, ${green}, ${blue}, ${alpha})`;
+    }
+
+    const divToRotate = document.querySelector(".backToTop");
+    let rotation = 0;
+
+    window.addEventListener("wheel", (event) => {
+      rotation += event.deltaY;
+      divToRotate.style.transform = `rotate(${rotation}deg)`;
+      console.log(rotation);
+    });
+</script>
+
+</html>

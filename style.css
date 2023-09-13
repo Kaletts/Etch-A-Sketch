@@ -1,0 +1,89 @@
+:root {
+    --box-shadow: 9px 9px 12px -4px rgba(71, 45, 45, 0.72);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --degrees: 0deg;
+}
+
+
+nav>div {
+    display: flex;
+    gap: 1rem;
+    margin: 0.5rem;
+    justify-content: center;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 0.5rem;
+}
+
+#wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.2rem;
+}
+
+.grid {
+    height: 2em;
+    width: 2rem;
+    border-radius: 0.35rem;
+    background-color: black;
+    border: 10px, solid, #ffffff;
+}
+
+button {
+    border-radius: 0.35rem;
+    background-color: black;
+    color: white;
+    padding: 0.5rem;
+    box-shadow: var(--box-shadow);
+}
+
+button:hover {
+    transform: scale(105%);
+}
+
+button:active {
+    transform: scale(100%)
+}
+
+input {
+    border-radius: 0.35rem;
+    background: linear-gradient(to right, rgb(255, 249, 249), rgb(255, 255, 255));
+    border-top: none;
+    border-bottom: thick rgb(255, 0, 0);
+    border-left: none;
+    border-right: none;
+    box-shadow: var(--box-shadow);
+    color: black;
+    padding: 0.5rem;
+}
+
+.backToTop {
+    background-color: rgb(31, 31, 31);
+    margin: 0px;
+    border-radius: 9999px;
+    height: 3rem;
+    width: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    transform: rotate var(--degrees);
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    border: 2px solid #f1a000;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
